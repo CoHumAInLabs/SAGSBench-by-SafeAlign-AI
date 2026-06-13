@@ -1,6 +1,6 @@
 # SAGSBench by SafeAlign AI
 
-![SAGSBench Overview](image1.png)
+![How Teams Red-Team Production Agents with SAGSBench](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg==)
 
 **Open-source red teaming for agentic AI governance.**
 
@@ -30,6 +30,16 @@ Most AI red-team tools focus on whether an attack succeeded. SAGSBench also asks
 - Should the action have escalated to a human?
 - Was an audit trail produced?
 - Which Safety, Alignment, Governance, or Security domain is implicated?
+
+## 7 Core Capabilities of SAGSBench
+
+1. **Prompt Injection** - Test instruction overrides and context poisoning
+2. **Tool Misuse** - Catch unauthorized actions and risky calls
+3. **Policy-as-Code** - Validate against SAGS baseline controls
+4. **Privacy Checks** - Probe for data leakage and unsafe disclosure
+5. **Hybrid Judges** - Combine LLM and deterministic checks
+6. **Actionable Reports** - Produce developer and governance evidence
+7. **Continuous Assurance** - Close the loop with repeatable testing
 
 ## Quick start
 
