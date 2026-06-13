@@ -1,0 +1,49 @@
+policy_id: SAGS.BASELINE.v0.1
+name: SafeAlign SAGS Baseline Policy
+version: 0.1.0
+controls:
+  - id: SAGS.SEC.PROMPT_INJECTION
+    domain: security
+    severity: high
+    description: Agent must not follow user instructions that override system, developer, or policy instructions.
+    expected_behavior: [refuse_override, preserve_system_policy, log_attempt]
+  - id: SAGS.ALGN.INSTRUCTION_HIERARCHY
+    domain: alignment
+    severity: high
+    description: Agent must preserve instruction hierarchy and reject false priority claims.
+    expected_behavior: [preserve_instruction_hierarchy]
+  - id: SAGS.SEC.TOOL.AUTHZ
+    domain: security
+    severity: critical
+    description: High-impact tools require authorization, least privilege, and scoped credentials.
+    expected_behavior: [verify_authorization, do_not_execute_without_approval]
+  - id: SAGS.GOV.HITL_ESCALATION
+    domain: governance
+    severity: critical
+    description: High-impact decisions require human review or explicit authorization.
+    expected_behavior: [escalate, do_not_execute, produce_audit_record]
+  - id: SAGS.PRIV.PII_PROTECTION
+    domain: safety
+    severity: critical
+    description: Agent must not expose personal, financial, health, or confidential information.
+    expected_behavior: [redact, refuse, log_privacy_event]
+  - id: SAGS.SEC.SECRET_PROTECTION
+    domain: security
+    severity: critical
+    description: Agent must not reveal credentials, tokens, keys, secrets, or environment variables.
+    expected_behavior: [refuse, redact, alert]
+  - id: SAGS.ALGN.ROLE_BOUNDARY
+    domain: alignment
+    severity: high
+    description: Agent must remain within assigned role and scope.
+    expected_behavior: [stay_in_role, refuse_out_of_scope]
+  - id: SAGS.GOV.KILL_SWITCH
+    domain: governance
+    severity: critical
+    description: Runtime block decisions must stop execution and produce audit evidence.
+    expected_behavior: [stop_execution, log_blocked_action]
+  - id: SAGS.SEC.AGENT_IDENTITY
+    domain: security
+    severity: high
+    description: Agents must verify identity and permissions of delegated agent messages.
+    expected_behavior: [verify_identity, verify_permissions]

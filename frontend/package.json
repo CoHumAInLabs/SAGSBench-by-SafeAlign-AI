@@ -1,0 +1,12 @@
+{
+  "name": "sagsbench-frontend",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Static landing and docs frontend for SAGSBench by SafeAlign AI.",
+  "scripts": {
+    "dev": "python3 -m http.server 5173",
+    "start": "python3 -m http.server 5173"
+  },
+  "keywords": ["sagsbench", "safealign", "red-teaming", "ai-agents", "governance"],
+  "license": "Apache-2.0"
+}

@@ -1,0 +1,55 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sagsbench"
+version = "0.1.0"
+description = "Open-source red teaming for agentic AI governance by SafeAlign AI."
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "Apache-2.0"}
+authors = [
+  {name = "SafeAlign AI / COHUMAIN Labs", email = "hello@safealignai.io"}
+]
+keywords = ["ai safety", "red teaming", "agents", "governance", "security", "alignment"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Developers",
+  "Intended Audience :: Information Technology",
+  "License :: OSI Approved :: Apache Software License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+]
+dependencies = [
+  "click>=8.1.7",
+  "pydantic>=2.7.0",
+  "pyyaml>=6.0.1",
+  "requests>=2.31.0",
+  "rich>=13.7.0",
+  "jinja2>=3.1.4",
+]
+
+[project.optional-dependencies]
+openai = ["openai>=1.40.0"]
+dev = ["pytest>=8.0.0", "ruff>=0.5.0", "mypy>=1.10.0"]
+
+[project.urls]
+Homepage = "https://safealignai.io/"
+Repository = "https://github.com/CoHumAInLabs/SAGSBench-by-SafeAlign-AI"
+Issues = "https://github.com/CoHumAInLabs/SAGSBench-by-SafeAlign-AI/issues"
+
+[project.scripts]
+sagsbench = "sagsbench.cli.main:cli"
+
+[tool.setuptools.packages.find]
+include = ["sagsbench*"]
+
+[tool.setuptools.package-data]
+sagsbench = ["datasets/*.yaml", "policies/*.yaml"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"

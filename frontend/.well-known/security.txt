@@ -1,0 +1,3 @@
+Contact: https://safealignai.io/
+Preferred-Languages: en
+Policy: https://github.com/CoHumAInLabs/SAGSBench-by-SafeAlign-AI/blob/main/SECURITY.md
