@@ -1,10 +1,12 @@
 # SAGSBench by SafeAlign AI
 
+![SAGSBench Overview](image1.png)
+
 **Open-source red teaming for agentic AI governance.**
 
 SAGSBench helps developers, security teams, and AI governance leaders test AI agents for **Safety, Alignment, Governance, and Security** risks before deployment. It runs adversarial test campaigns against agents, evaluates results with deterministic checks and optional LLM judges, and produces audit-ready reports mapped to policy controls.
 
-> Built by [SafeAlign AI](https://safealignai.io/) as an open-source contribution to secure and govern agentic AI systems.
+Built by [SafeAlign AI](https://safealignai.io/) as an open-source contribution to secure and govern agentic AI systems.
 
 ## What it tests
 
@@ -89,7 +91,7 @@ This repository is an initial v0.1 scaffold intended for community iteration. It
 
 ## Responsible use
 
-SAGSBench is for authorized testing only. Do not test systems you do not own or have explicit permission to assess. The included attack prompts are synthetic and designed for defensive evaluation, governance assurance, and secure development workflows.
+SAGSBench is for authorized testing only. Do not test systems you do not own or have explicit permission to assess. The included attack prompts are synthetic and designed for defensive evaluation.
 
 ## License
 
