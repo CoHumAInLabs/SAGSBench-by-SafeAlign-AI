@@ -1,0 +1,1 @@
+![SAGSBench How Teams Red-Team Production Agents with SAGSBench](./images/sagsbench-overview.png)
