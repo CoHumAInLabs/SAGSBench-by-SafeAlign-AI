@@ -20,6 +20,8 @@ audit-ready reports mapped to policy controls.
 🌐 **Website & live leaderboard:** <https://cohumainlabs.github.io/SAGSBench-by-SafeAlign-AI/frontend/>
 🛡️ Built by [SafeAlign AI](https://safealignai.io/) / [COHUMAIN Labs](https://www.cohumain.ai/).
 
+![How teams red-team production agents with SAGSBench — connect, attack, evaluate, govern, improve — plus the 7 core capabilities and SAGS report/deployment outputs.](frontend/assets/sagsbench-infographic.png)
+
 ---
 
 ## ✨ What's new in v0.2
