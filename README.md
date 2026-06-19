@@ -138,7 +138,7 @@ Content Security Policy.
 
 ## Presented at
 
-- **ICLR 2026 Workshop — Agents in the Wild: Safety, Security, and Beyond** — Himanshu Joshi (COHUMAIN Labs / SafeAlign AI) and Shivani Shukla (University of San Francisco) ([paper](https://openreview.net/forum?id=EfntnSDsdu) · [virtual](https://iclr.cc/virtual/2026/10016356))
+- **ICLR 2026 Workshop — Agents in the Wild: Safety, Security, and Beyond** — Himanshu Joshi (COHUMAIN Labs / SafeAlign AI), Shivani Shukla (University of San Francisco), Manas Joshi (COHUMAIN Labs), and Sunita Kumari (COHUMAIN Labs) ([paper](https://openreview.net/forum?id=EfntnSDsdu) · [virtual](https://iclr.cc/virtual/2026/10016356))
 - **Toronto Machine Learning Summit (TMLS) 2026** — Himanshu Joshi ([presenter](https://www.torontomachinelearning.com/presenter/himanshu-joshi/))
 
 ## Citation
