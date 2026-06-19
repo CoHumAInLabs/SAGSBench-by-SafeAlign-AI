@@ -6,7 +6,9 @@ authors:
   - family-names: Joshi
     given-names: Himanshu
     affiliation: "COHUMAIN Labs / SafeAlign AI"
-  - name: "SafeAlign AI / COHUMAIN Labs"
+  - family-names: Shukla
+    given-names: Shivani
+    affiliation: "University of San Francisco"
 repository-code: "https://github.com/CoHumAInLabs/SAGSBench-by-SafeAlign-AI"
 url: "https://cohumainlabs.github.io/SAGSBench-by-SafeAlign-AI/frontend/"
 license: Apache-2.0
