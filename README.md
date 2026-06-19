@@ -17,7 +17,7 @@ audit-ready reports mapped to policy controls.
 > worked, which control failed, how much risk was reduced, and how does this agent
 > stack compare with others?"*
 
-🌐 **Website & live leaderboard:** <https://cohumainlabs.github.io/SAGSBench-by-SafeAlign-AI/frontend/>
+🌐 **Website & live leaderboard:** <https://cohumainlabs.github.io/SAGSBench-by-SafeAlign-AI/>
 🛡️ Built by [SafeAlign AI](https://safealignai.io/) / [COHUMAIN Labs](https://www.cohumain.ai/).
 
 ![How teams red-team production agents with SAGSBench — connect, attack, evaluate, govern, improve — plus the 7 core capabilities and SAGS report/deployment outputs.](frontend/assets/sagsbench-infographic.png)
