@@ -20,7 +20,7 @@ audit-ready reports mapped to policy controls.
 🌐 **Website & live leaderboard:** <https://cohumainlabs.github.io/SAGSBench-by-SafeAlign-AI/>
 🛡️ Built by [SafeAlign AI](https://safealignai.io/) / [COHUMAIN Labs](https://www.cohumain.ai/).
 
-![How teams red-team production agents with SAGSBench — connect, attack, evaluate, govern, improve — plus the 7 core capabilities and SAGS report/deployment outputs.](frontend/assets/sagsbench-infographic.png)
+![How teams red-team production agents with SAGSBench — connect, attack, evaluate, govern, improve — plus the 7 core capabilities and SAGS report/deployment outputs.](frontend/assets/sagsbench-workflow.png)
 
 ---
 
@@ -140,7 +140,7 @@ Content Security Policy.
 
 ## Presented at
 
-- **ICLR 2026 Workshop — Agents in the Wild: Safety, Security, and Beyond** — Himanshu Joshi (COHUMAIN Labs / SafeAlign AI), Shivani Shukla (University of San Francisco), Manas Joshi (COHUMAIN Labs), and Sunita Kumari (COHUMAIN Labs) ([paper](https://openreview.net/forum?id=EfntnSDsdu) · [virtual](https://iclr.cc/virtual/2026/10016356))
+- **ICLR 2026 Workshop — Agents in the Wild: Safety, Security, and Beyond** — Himanshu Joshi (COHUMAIN Labs / SafeAlign AI), Shivani Shukla (University of San Francisco), Manas Joshi (COHUMAIN Labs)
 - **Toronto Machine Learning Summit (TMLS) 2026** — Himanshu Joshi ([presenter](https://www.torontomachinelearning.com/presenter/himanshu-joshi/))
 
 ## Citation
