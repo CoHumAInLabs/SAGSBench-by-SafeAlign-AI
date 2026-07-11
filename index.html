@@ -3,11 +3,391 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta http-equiv="refresh" content="0; url=frontend/" />
-    <meta name="robots" content="noindex" />
-    <title>SAGSBench</title>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; frame-ancestors 'none'" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <title>SAGSBench by SafeAlign AI | Open-Source Agent Red Teaming</title>
+    <meta name="description" content="SAGSBench is an open-source red-team and governance assurance toolkit for AI agents, built by SafeAlign AI and COHUMAIN Labs." />
+    <meta property="og:title" content="SAGSBench by SafeAlign AI" />
+    <meta property="og:description" content="Open-source red teaming for production AI agents mapped to Safety, Alignment, Governance, and Security controls." />
+    <meta property="og:type" content="website" />
+    <meta name="theme-color" content="#050703" />
+    <link rel="icon" href="assets/favicon-64.png" type="image/png" />
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+    <link rel="stylesheet" href="assets/styles.css" />
   </head>
   <body>
-    <p>Redirecting to <a href="frontend/">SAGSBench frontend</a>.</p>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <div class="launch-banner" role="note">
+      <span class="launch-pill">Launching at TMLS 2026</span>
+      <span>SAGSBench is presented at the <a href="https://iclr.cc/virtual/2026/10016356" rel="noopener noreferrer">ICLR 2026 Workshop — Agents in the Wild</a> and the <a href="https://www.torontoml.ai/program" rel="noopener noreferrer">Toronto ML Summit 2026</a>.</span>
+    </div>
+
+    <header class="site-header" id="top">
+      <a class="brand" href="#top" aria-label="SAGSBench home">
+        <img src="assets/safealign-ai-logo.png" alt="SafeAlign AI" class="brand-logo" />
+        <span class="brand-copy"><strong>SAGSBench</strong><em>by SafeAlign AI</em></span>
+      </a>
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav class="nav" id="site-nav" aria-label="Main navigation">
+        <a href="#overview">Overview</a>
+        <a href="#quickstart">Quick start</a>
+        <a href="#defense">Defense Mode</a>
+        <a href="leaderboard.html">Leaderboard</a>
+        <a href="#frameworks">Frameworks</a>
+        <a href="#reports">Reports</a>
+      </nav>
+      <div class="header-actions">
+        <a class="ghost" href="https://safealignai.io/" rel="noopener noreferrer">SafeAlign AI</a>
+        <a class="button small" href="https://github.com/CoHumAInLabs/SAGSBench-by-SafeAlign-AI" rel="noopener noreferrer">GitHub</a>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero section-pad">
+        <div class="hero-copy reveal">
+          <div class="eyebrow"><span class="status-dot"></span> unified red-team plane for agentic AI</div>
+          <h1>RED-TEAM <span>PRODUCTION AGENTS</span> WITH SAGSBENCH</h1>
+          <p class="lead">Open-source Safety, Alignment, Governance, and Security benchmarking for AI agents — test attacks, <strong>compare defenses</strong>, produce evidence, and rank agent stacks.</p>
+          <div class="hero-actions">
+            <a class="button" href="#quickstart">Start testing</a>
+            <a class="ghost strong" href="#defense">Compare defenses</a>
+            <a class="ghost strong" href="leaderboard.html">View leaderboard</a>
+          </div>
+          <div class="metric-row" aria-label="SAGSBench highlights">
+            <span><b>4</b> SAGS domains</span>
+            <span><b>8</b> defenses</span>
+            <span><b>5</b> leaderboard tracks</span>
+            <span><b>6</b> report formats</span>
+          </div>
+        </div>
+
+        <aside class="hero-system reveal" aria-label="SAGSBench workflow preview">
+          <div class="system-core">
+            <img src="assets/safealign-ai-logo.png" alt="" aria-hidden="true" />
+            <p>SafeAlign AI</p>
+            <strong>SAGSBENCH</strong>
+            <small>Red-Team. Evaluate. Govern. Improve.</small>
+          </div>
+          <div class="orbit orbit-one"></div>
+          <div class="orbit orbit-two"></div>
+          <article class="node node-a"><b>01</b><span>Connect</span><small>HTTP, OpenAI-compatible, frameworks</small></article>
+          <article class="node node-b"><b>02</b><span>Attack</span><small>Prompt injection, jailbreaks, tool misuse</small></article>
+          <article class="node node-c"><b>03</b><span>Evaluate</span><small>LLM + deterministic judges</small></article>
+          <article class="node node-d"><b>04</b><span>Govern</span><small>Map to policies and controls</small></article>
+        </aside>
+      </section>
+
+      <section class="overview section-pad" id="overview">
+        <div class="section-heading split reveal">
+          <div>
+            <div class="eyebrow">Why SAGSBench</div>
+            <h2>Attack testing that turns into governance evidence.</h2>
+          </div>
+          <p>Most red-team outputs stop at attack success rates. SAGSBench connects findings to controls, severity, remediation, and repeatable CI/CD workflows.</p>
+        </div>
+        <div class="cards three reveal">
+          <article><span>01</span><h3>Adversarial campaigns</h3><p>Run curated suites for prompt injection, jailbreaking, goal hijacking, data exfiltration, unsafe delegation, and tool abuse.</p><a href="#reports">Learn more</a></article>
+          <article><span>02</span><h3>SAGS scorecards</h3><p>Translate results into Safety, Alignment, Governance, and Security posture scores with evidence for each failure.</p><a href="#reports">View formats</a></article>
+          <article><span>03</span><h3>CI/CD assurance</h3><p>Export HTML, JSON, CSV, Markdown, and SARIF so developers can fix issues and leaders can govern risk.</p><a href="#security">Review hardening</a></article>
+        </div>
+      </section>
+
+      <section class="quickstart section-pad" id="quickstart">
+        <div class="section-heading split reveal">
+          <div>
+            <div class="eyebrow">Quick start</div>
+            <h2>Run your first agent attack campaign.</h2>
+          </div>
+          <p>Select a target mode, copy the snippet, and run SAGSBench locally. The buttons below copy working commands.</p>
+        </div>
+        <div class="quickstart-shell reveal">
+          <div class="tabs" role="tablist" aria-label="Quickstart examples">
+            <button class="tab active" type="button" role="tab" aria-selected="true" aria-controls="tab-cli" data-tab="cli">CLI</button>
+            <button class="tab" type="button" role="tab" aria-selected="false" aria-controls="tab-http" data-tab="http">HTTP Agent</button>
+            <button class="tab" type="button" role="tab" aria-selected="false" aria-controls="tab-defenses" data-tab="defenses">Defense Mode</button>
+            <button class="tab" type="button" role="tab" aria-selected="false" aria-controls="tab-openai" data-tab="openai">OpenAI-compatible</button>
+            <button class="tab" type="button" role="tab" aria-selected="false" aria-controls="tab-ci" data-tab="ci">GitHub Action</button>
+          </div>
+
+          <section class="code-panel active" id="tab-cli" role="tabpanel">
+            <div class="code-toolbar"><span>install-and-scan.sh</span><button class="copy-button" type="button" data-copy-target="code-cli">Copy</button></div>
+            <pre><code id="code-cli">pip install sagsbench
+
+sagsbench scan \
+  --target http://localhost:8000/chat \
+  --profile enterprise \
+  --report html,json,csv,sarif</code></pre>
+          </section>
+
+          <section class="code-panel" id="tab-http" role="tabpanel" hidden>
+            <div class="code-toolbar"><span>http-target.py</span><button class="copy-button" type="button" data-copy-target="code-http">Copy</button></div>
+            <pre><code id="code-http">from sagsbench import Campaign, HTTPAgentTarget
+from sagsbench.attacks import BaselineAttackSuite
+from sagsbench.judges import RegexJudge, PolicyJudge
+
+campaign = Campaign(
+    target=HTTPAgentTarget(
+        name="customer-support-agent",
+        endpoint="http://localhost:8000/chat",
+        input_key="message",
+        output_key="response",
+    ),
+    suites=[BaselineAttackSuite.from_builtin("enterprise")],
+    judges=[RegexJudge(), PolicyJudge.from_builtin("sags_baseline")],
+)
+
+campaign.run().to_html("reports/sagsbench-report.html")</code></pre>
+          </section>
+
+          <section class="code-panel" id="tab-defenses" role="tabpanel" hidden>
+            <div class="code-toolbar"><span>evaluate-defenses.py</span><button class="copy-button" type="button" data-copy-target="code-defenses">Copy</button></div>
+            <pre><code id="code-defenses">from sagsbench import evaluate_defenses, make_defense_stack, HTTPAgentTarget
+from sagsbench.attacks import BaselineAttackSuite
+from sagsbench.judges import RegexJudge, PolicyJudge
+
+result = evaluate_defenses(
+    target=HTTPAgentTarget(name="agent", endpoint="http://localhost:8000/chat"),
+    attack_suite=BaselineAttackSuite.from_builtin("enterprise"),
+    benign_suite=BaselineAttackSuite.from_builtin("benign"),
+    variants=[
+        ("no-defense", make_defense_stack("no-defense")),
+        ("tool-filter", make_defense_stack("tool-filter")),
+        ("combined", make_defense_stack("policy-engine+approval-gate+tool-filter")),
+    ],
+    judges=[RegexJudge(), PolicyJudge.from_builtin("sags_baseline")],
+)
+print("Recommended stack:", result.best_variant)
+result.to_html("reports/sagsbench-defenses.html")</code></pre>
+          </section>
+
+          <section class="code-panel" id="tab-openai" role="tabpanel" hidden>
+            <div class="code-toolbar"><span>openai-compatible.py</span><button class="copy-button" type="button" data-copy-target="code-openai">Copy</button></div>
+            <pre><code id="code-openai">from sagsbench import Campaign
+from sagsbench.adapters import OpenAICompatibleTarget
+from sagsbench.attacks import BaselineAttackSuite
+from sagsbench.judges import RegexJudge, PolicyJudge
+
+campaign = Campaign(
+    target=OpenAICompatibleTarget(
+        name="governed-agent",
+        base_url="https://api.openai.com/v1",
+        model="gpt-4o-mini",
+    ),
+    suites=[BaselineAttackSuite.from_builtin("enterprise")],
+    judges=[RegexJudge(), PolicyJudge.from_builtin("sags_baseline")],
+)
+
+campaign.run().to_sarif("reports/sagsbench.sarif")</code></pre>
+          </section>
+
+          <section class="code-panel" id="tab-ci" role="tabpanel" hidden>
+            <div class="code-toolbar"><span>ci.yml</span><button class="copy-button" type="button" data-copy-target="code-ci">Copy</button></div>
+            <pre><code id="code-ci">name: SAGSBench Red Team
+on: [pull_request]
+jobs:
+  redteam:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: pip install sagsbench
+      - run: sagsbench scan --target http://localhost:8000/chat --report sarif,json</code></pre>
+          </section>
+        </div>
+      </section>
+
+      <section class="defense section-pad" id="defense">
+        <div class="section-heading split reveal">
+          <div>
+            <div class="eyebrow">New · Defense Evaluation Mode</div>
+            <h2>Prove which defenses actually reduce risk.</h2>
+          </div>
+          <p>Run the same attack and governance suites against a baseline and one or more defense variants. SAGSBench replays identical cases, then compares attack success, governance failures, task completion, latency, and evidence gathering.</p>
+        </div>
+        <div class="defense-compare reveal">
+          <table class="lb-table">
+            <thead>
+              <tr><th>Defense variant</th><th>Attack success</th><th>Gov. failures</th><th>Task completion</th><th>Latency</th><th>Effectiveness</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><b>No defense</b><br><small>baseline</small></td><td>100%</td><td>100%</td><td>100%</td><td>+0 ms</td><td class="score">21<div class="bar"><span class="w-21"></span></div></td></tr>
+              <tr><td><b>Tool filter</b><br><small>low-cost default</small></td><td>80%</td><td>67%</td><td>100%</td><td>+20 ms</td><td class="score">38<div class="bar"><span class="w-38"></span></div></td></tr>
+              <tr><td><b>Policy engine</b><br><small>best governance gain</small></td><td>40%</td><td>33%</td><td>100%</td><td>+65 ms</td><td class="score">64<div class="bar"><span class="w-64"></span></div></td></tr>
+              <tr class="best"><td><b>Combined stack</b><br><small>recommended</small></td><td>20%</td><td>33%</td><td>100%</td><td>+180 ms</td><td class="score">68<div class="bar"><span class="w-68"></span></div></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="defense-features reveal">
+          <article><h3>8 pluggable defenses</h3><p>Tool filter, approval gate, policy engine, memory sandbox, prompt shield, runtime monitor, RBAC, and kill switch — composed with <code>+</code> in a single configuration.</p></article>
+          <article><h3>Defense Effectiveness Score</h3><p>A configurable 0–100 score rewarding risk reduction, governance, and audit completeness while penalizing false positives, latency, and poor recall.</p></article>
+          <article><h3>Regression in CI</h3><p>Gate every pull request so safety controls can't silently weaken over time.</p></article>
+        </div>
+        <div class="hero-actions reveal"><a class="button" href="https://github.com/CoHumAInLabs/SAGSBench-by-SafeAlign-AI/blob/main/docs/DEFENSE_EVALUATION.md" rel="noopener noreferrer">Read the guide</a></div>
+      </section>
+
+      <section class="leaderboard-cta section-pad" id="leaderboard">
+        <div class="section-heading split reveal">
+          <div>
+            <div class="eyebrow">New · Public Leaderboard</div>
+            <h2>Rank agent stacks, not just models.</h2>
+          </div>
+          <p>Enterprise agent risk depends on the whole architecture — model + framework + tools + memory + approval flow + policy layer + monitoring. The SAGSBench leaderboard ranks stacks by Safety, Alignment, Governance, and Security posture.</p>
+        </div>
+        <div class="cards three reveal">
+          <article><span>01</span><h3>5 use-case tracks</h3><p>Customer support, finance/procurement, HR, DevOps/SRE, and multi-agent governance — each with its own risks.</p></article>
+          <article><span>02</span><h3>Verification levels</h3><p>Self-reported, reproducible, community-verified, maintainer-verified, and private enterprise boards.</p></article>
+          <article><span>03</span><h3>Anti-gaming by design</h3><p>Hidden splits, versioned suites, audit-evidence requirements, and a task-utility floor so agents can't win by refusing everything.</p></article>
+        </div>
+        <div class="hero-actions reveal"><a class="button" href="leaderboard.html">Open the leaderboard</a><a class="ghost strong" href="https://github.com/CoHumAInLabs/SAGSBench-by-SafeAlign-AI/blob/main/docs/LEADERBOARD.md" rel="noopener noreferrer">Submit a report</a></div>
+      </section>
+
+      <section class="frameworks section-pad" id="frameworks">
+        <div class="section-heading centered reveal">
+          <div class="eyebrow">Framework coverage</div>
+          <h2>Designed for the agent stacks teams actually ship.</h2>
+          <p>A developer-friendly flow — quick-start snippets, attack runs, reports, and framework support — with SAGS governance assurance built in.</p>
+        </div>
+        <div class="framework-matrix reveal">
+          <article class="available"><a class="stretch" href="#quickstart" aria-label="Generic HTTP adapter — see quick start"></a><div>HTTP</div><h3>Generic HTTP</h3><p>Connect to any endpoint with a simple REST interface.</p></article>
+          <article class="available"><a class="stretch" href="#quickstart" aria-label="OpenAI-compatible adapter — see quick start"></a><div>API</div><h3>OpenAI-compatible</h3><p>Test agents behind OpenAI-compatible model APIs.</p></article>
+          <article><a class="stretch" href="https://github.com/CoHumAInLabs/SAGSBench-by-SafeAlign-AI/tree/main/sagsbench/adapters" rel="noopener noreferrer" aria-label="LiteLLM / Ollama adapter — in development"></a><div>COMING</div><h3>LiteLLM / Ollama</h3><p>Local model testing and multi-backend routing.</p></article>
+          <article><a class="stretch" href="https://github.com/CoHumAInLabs/SAGSBench-by-SafeAlign-AI/blob/main/docs/ROADMAP.md" rel="noopener noreferrer" aria-label="LangChain support — see roadmap"></a><div>ROADMAP</div><h3>LangChain</h3><p>Native support for LangChain agents.</p></article>
+          <article><a class="stretch" href="https://github.com/CoHumAInLabs/SAGSBench-by-SafeAlign-AI/blob/main/docs/ROADMAP.md" rel="noopener noreferrer" aria-label="LangGraph support — see roadmap"></a><div>ROADMAP</div><h3>LangGraph</h3><p>Agentic workflows and state-based planning.</p></article>
+          <article><a class="stretch" href="https://github.com/CoHumAInLabs/SAGSBench-by-SafeAlign-AI/blob/main/docs/ROADMAP.md" rel="noopener noreferrer" aria-label="Multi-agent support — see roadmap"></a><div>ROADMAP</div><h3>Multi-agent</h3><p>CrewAI, Autogen, and orchestration frameworks.</p></article>
+        </div>
+      </section>
+
+      <section class="security section-pad" id="security">
+        <div class="section-heading split reveal">
+          <div>
+            <div class="eyebrow">Frontend security</div>
+            <h2>Stylish, static, and hardened for GitHub Pages.</h2>
+          </div>
+          <p>No external runtime dependencies, no trackers, no cookies, no forms, no inline scripts, and a restrictive Content Security Policy. The UI is designed to be deployable as a public static site.</p>
+        </div>
+        <div class="security-grid reveal">
+          <article><b>CSP locked</b><span>default-src self; object-src none; form-action none; frame-ancestors none</span></article>
+          <article><b>Local assets only</b><span>CSS, JavaScript, favicon, and images are served from this repository.</span></article>
+          <article><b>No collection surface</b><span>No analytics pixels, forms, cookies, localStorage, or third-party APIs.</span></article>
+          <article><b>Safer outbound links</b><span>External links use rel="noopener noreferrer" and open as normal links.</span></article>
+        </div>
+      </section>
+
+      <section class="reports section-pad" id="reports">
+        <div class="section-heading centered reveal">
+          <div class="eyebrow">Report preview</div>
+          <h2>Evidence developers can fix and leaders can govern.</h2>
+        </div>
+        <div class="report-console reveal">
+          <aside>
+            <strong>SAGSBench Report</strong>
+            <a href="#reports" data-report="summary">Executive summary</a>
+            <a href="#reports" data-report="findings">Critical findings</a>
+            <a href="#reports" data-report="scorecard">SAGS scorecard</a>
+            <a href="#reports" data-report="controls">Control mapping</a>
+          </aside>
+          <div class="report-main">
+            <div class="report-status"><span>enterprise profile</span><b>2 critical · 6 high · 19 medium</b></div>
+            <div class="report-kpis">
+              <article><span>Safety</span><b>88</b><small>privacy probes mostly blocked</small></article>
+              <article><span>Alignment</span><b>79</b><small>role drift detected</small></article>
+              <article><span>Governance</span><b>74</b><small>escalation gaps found</small></article>
+              <article><span>Security</span><b>86</b><small>tool abuse blocked</small></article>
+            </div>
+            <div class="finding-table">
+              <p><b>tool-misuse-042</b><span>Unauthorized action attempted</span><em>critical</em></p>
+              <p><b>privacy-019</b><span>Synthetic PII exposed under pressure</span><em>high</em></p>
+              <p><b>governance-007</b><span>Human approval bypassed</span><em>high</em></p>
+            </div>
+            <div class="report-actions">
+              <a class="button small" href="#quickstart">Run your scan</a>
+              <a class="ghost strong" href="https://github.com/CoHumAInLabs/SAGSBench-by-SafeAlign-AI" rel="noopener noreferrer">Open repo</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="infographic section-pad" id="infographic">
+        <div class="section-heading split reveal">
+          <div>
+            <div class="eyebrow">Visual overview</div>
+            <h2>The SAGSBench workflow at a glance.</h2>
+          </div>
+          <p>End-to-end red teaming: from agent connection through attack, evaluation, and governance mapping — producing actionable evidence for developers and leaders.</p>
+        </div>
+        <img src="assets/sagsbench-infographic.png" alt="SAGSBench red-team workflow: Connect your agent, run attacks, evaluate with LLM and deterministic judges, map findings to SAGS policies and frameworks." />
+        <div class="core-capabilities reveal">
+          <div class="section-heading centered">
+            <div class="eyebrow">7 core capabilities</div>
+          </div>
+          <div class="capabilities-grid">
+            <article>
+              <span class="capability-number">01</span>
+              <h4>Prompt Injection</h4>
+              <p>Test instruction overrides and context poisoning scenarios.</p>
+            </article>
+            <article>
+              <span class="capability-number">02</span>
+              <h4>Tool Misuse</h4>
+              <p>Catch unauthorized actions and risky tool calls.</p>
+            </article>
+            <article>
+              <span class="capability-number">03</span>
+              <h4>Policy-as-Code</h4>
+              <p>Validate against SAGS baseline controls.</p>
+            </article>
+            <article>
+              <span class="capability-number">04</span>
+              <h4>Privacy Checks</h4>
+              <p>Probe for data leakage and unsafe disclosure.</p>
+            </article>
+            <article>
+              <span class="capability-number">05</span>
+              <h4>Hybrid Judges</h4>
+              <p>Combine LLM and deterministic checks.</p>
+            </article>
+            <article>
+              <span class="capability-number">06</span>
+              <h4>Actionable Reports</h4>
+              <p>Export HTML, JSON, CSV, Markdown, and SARIF.</p>
+            </article>
+            <article>
+              <span class="capability-number">07</span>
+              <h4>Continuous Assurance</h4>
+              <p>Close the loop with repeatable testing.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="terminal-cta">
+        <div>
+          <div class="eyebrow">Open source now</div>
+          <h2>Use the harness locally. Scale governance with SafeAlign AI.</h2>
+          <p>SAGSBench is the developer-first red-team layer. SafeAlign AI-GovOS extends this into runtime monitoring, policy registries, kill switches, evidence workflows, and governance dashboards for enterprises.</p>
+          <div class="hero-actions"><a class="button" href="https://github.com/CoHumAInLabs/SAGSBench-by-SafeAlign-AI" rel="noopener noreferrer">Star on GitHub</a><a class="ghost strong" href="https://safealignai.io/" rel="noopener noreferrer">Explore SafeAlign AI</a></div>
+        </div>
+        <pre><code>$ sagsbench evaluate-defenses --target http://localhost:8000/chat \
+    --variant tool-filter --variant policy-engine+approval-gate
+
+  variant                     attack  gov   task   score
+  no-defense                   100%   100%  100%   21/100
+  tool-filter                   80%    67%  100%   38/100
+  policy-engine+approval-gate   20%    12%   96%   68/100
+
+✓ recommended stack: policy-engine+approval-gate
+✓ reports/sagsbench-defenses.html</code></pre>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>© 2026 SafeAlign AI / COHUMAIN Labs</span>
+      <a href="#top">Back to top</a>
+      <a href="https://safealignai.io/" rel="noopener noreferrer">safealignai.io</a>
+      <a href="https://www.cohumain.ai/" rel="noopener noreferrer">cohumain.ai</a>
+      <a href="https://github.com/CoHumAInLabs/SAGSBench-by-SafeAlign-AI" rel="noopener noreferrer">GitHub</a>
+    </footer>
+    <script src="assets/app.js"></script>
   </body>
 </html>
